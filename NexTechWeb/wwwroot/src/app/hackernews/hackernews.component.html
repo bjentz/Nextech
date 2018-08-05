@@ -1,0 +1,15 @@
+<table class='table' >
+  <thead>
+      <tr>
+          <th>Article Title</th>
+          <th>Author</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let article of articles">
+          <td><a href={{article.url}} target="new" >{{ article.title }}</a></td>
+          <td>{{ article.by }}</td>
+
+      </tr>
+  </tbody>
+</table>
