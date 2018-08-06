@@ -20,15 +20,15 @@ namespace Nextech.Data
         }
         public async Task< IEnumerable<int>> ReadIdsasync()
         {
-            string idList = await _client.GetStringAsync($"{ _addressRoot}{ _idPath}{ _addressSufix}");
-            var ids = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(idList);
-            return ids;
+                string idList = await _client.GetStringAsync($"{ _addressRoot}{ _idPath}{ _addressSufix}");
+                var ids = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(idList);
+                return ids;
         }
 
         public async Task<Article> ReadItemasync(int Id)
         {
-            HttpResponseMessage itemMessage = await _client.GetAsync($"{_addressRoot}{_itemPath}{Id}{_addressSufix}");
-            return await itemMessage.Content.ReadAsAsync<Article>();
+                HttpResponseMessage itemMessage = await _client.GetAsync($"{_addressRoot}{_itemPath}{Id}{_addressSufix}");
+                return await itemMessage.Content.ReadAsAsync<Article>();
         }
     }
 }
